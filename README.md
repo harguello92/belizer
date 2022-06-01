@@ -1,2 +1,2 @@
 # belizer
-Javascript library to serialize and unserialize
+Library with two useless tools: Serialize and Unserialize

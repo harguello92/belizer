@@ -1,0 +1,27 @@
+{
+  "name": "belizer",
+  "private": true,
+  "version": "1.0.0",
+  "main": "/dist/belizer.umd.js",
+  "module": "/dist/belizer.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/belizer.es.js",
+      "require": "./dist/belizer.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "jest && tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.3",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  }
+}
