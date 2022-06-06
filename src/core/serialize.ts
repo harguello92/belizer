@@ -6,32 +6,23 @@ class Serialize implements SerializeInterface, BealizerInterface {
   config;
 
   constructor(
-    params: { [key: number]: string },
+    params: { [key: number | string]: string },
     config?: { [key: string]: string }
   ) {
-    console.log(params);
     this.params = params;
     this.config = config;
   }
 
   process() {
-    return `
-    <span class="serializeurl__domain">https://www.example.com<span>
-    <span class="serializeurl__interrogant">?</span>
-    ${Object.entries(this.params)
-      .map(([key, value]) => {
-        return `
-          <span class="serializeurl__key">${key}</span>
-          <span class="serializeurl__equal">=</span>
-          <span class="serializeurl__value">${value.trim()}</span>
-          `;
-      })
-      .join('<span class="serializeurl__ampersand">&</span>')}`;
+    return;
+    Object.entries(this.params)
+      .map(([key, value]) => `${key}=${value}`)
+      .join("&");
   }
 }
 
 export default function (
-  params: { [key: number]: string },
+  params: { [key: number | string]: string },
   config?: { [key: string]: string }
 ) {
   const serializer = new Serialize(params, config);

@@ -1,33 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      .container {
-        display: flex;
-      }
-      .inputBlock {
-        min-height: 100px;
-      }
-      .input {
-        border-radius: 0.2rem;
-      }
-    </style>
-  </head>
+  <head> </head>
   <body>
-    <div id="app" class="container">
-      <form class="form">
-        <div class="formGroup">
-          <label for="serialize">Serialize</label>
-          <input id="serialize" name="serialize" type="text" />
-          <div class="js-serialize-preview"></div>
-        </div>
-        <div class="formGroup">
-          <label for="unserialize">Unserialize</label>
-          <input id="unserialize" type="text" />
-          <div class="js-serialize-preview"></div>
-        </div>
-      </form>
-    </div>
     <script type="module" defer async src="/src/preview.ts"></script>
   </body>
 </html>

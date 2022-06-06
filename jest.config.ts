@@ -1,9 +1,7 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+import type { Config } from "@jest/types";
 
-export default {
+// Sync object
+const config: Config.InitialOptions = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["/node_modules/"],
@@ -11,4 +9,8 @@ export default {
   moduleFileExtensions: ["ts", "js"],
   testMatch: ["**/__tests__/*.ts"],
   testPathIgnorePatterns: ["/node_modules/"],
+  preset: "ts-jest",
+  testEnvironment: "node",
 };
+
+export default config;

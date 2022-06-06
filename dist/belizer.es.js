@@ -12,9 +12,7 @@ class Serialize {
     this.config = config;
   }
   process() {
-    return Object.entries(this.params).map(([key, value]) => {
-      return `${key}=${value}`;
-    }).join("&");
+    return;
   }
 }
 function serialize(params, config) {
@@ -29,13 +27,14 @@ class Unserialize {
     this.config = config;
   }
   process() {
-    const parts = this.string.split("&");
+    var _a;
+    const parts = (_a = this.string) == null ? void 0 : _a.split("&");
     const params = {};
     for (const part in parts) {
       const [key, value] = part.split("=");
       params[key] = value;
     }
-    return params;
+    return JSON.stringify(params);
   }
 }
 function unserialize(string, config) {
