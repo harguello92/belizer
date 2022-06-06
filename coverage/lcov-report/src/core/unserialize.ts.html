@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.37% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/29</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.37% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/29</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,27 +100,27 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BealizerInterface from "../interfaces/Bealizer";
 import UnserializeInterface from "../interfaces/Unserialize";
 &nbsp;
@@ -128,28 +128,28 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
   string;
   config;
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(string: string | null, config?: { [key: string]: string }) {</span>
-<span class="cstat-no" title="statement not covered" >    this.string = string;</span>
-<span class="cstat-no" title="statement not covered" >    this.config = config;</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  constructor(string: string | null, config?: { [key: string]: string }) {
+    this.string = string;
+    this.config = config;
+  }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  process() {</span>
-<span class="cstat-no" title="statement not covered" >    const parts = this.string?.split("&amp;");</span>
-<span class="cstat-no" title="statement not covered" >    const params = {} as { [key: string]: string };</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    for (const part in parts) {</span>
-<span class="cstat-no" title="statement not covered" >      const [key, value] = part.split("=");</span>
-<span class="cstat-no" title="statement not covered" >      params[key] = value;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return JSON.stringify(params);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  process() {
+    const parts = this.string?.split("&amp;");
+    const params = {} as { [key: string]: string };
+&nbsp;
+    for (const part in parts) {
+      const [key, value] = part.split("=");
+      params[key] = value;
+    }
+&nbsp;
+    return JSON.stringify(params);
+  }
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export default function (string: string, config?: { [key: string]: string }) {</span></span>
-<span class="cstat-no" title="statement not covered" >  const unserialize = new Unserialize(string, config);</span>
-<span class="cstat-no" title="statement not covered" >  return unserialize.process();</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+export default function (string: string, config?: { [key: string]: string }) {
+  const unserialize = new Unserialize(string, config);
+  return unserialize.process();
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -157,7 +157,7 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jun 06 2022 22:35:22 GMT+0200 (hora de verano de Europa central)
+                at Mon Jun 06 2022 23:32:13 GMT+0200 (hora de verano de Europa central)
             </div>
         <script src="../../prettify.js"></script>
         <script>

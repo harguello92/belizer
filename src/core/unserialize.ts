@@ -5,13 +5,14 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
   string;
   config;
 
-  constructor(string: string | null, config?: { [key: string]: string }) {
+  constructor(string: string | null = "", config?: { [key: string]: string }) {
     this.string = string;
     this.config = config;
   }
 
   process() {
-    const parts = this.string?.split("&");
+    const string = this.string.substring(this.string.indexOf("?"));
+    const parts = this.string.split("&");
     const params = {} as { [key: string]: string };
 
     for (const part in parts) {
@@ -19,7 +20,7 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
       params[key] = value;
     }
 
-    return JSON.stringify(params);
+    return params;
   }
 }
 
