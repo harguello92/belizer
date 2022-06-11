@@ -1,4 +1,4 @@
 .DS\_\*
 \*.log
-
 node_modules
+coverage
