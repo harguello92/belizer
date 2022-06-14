@@ -1,44 +1,32 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
 class Serialize {
-  constructor(params, config) {
-    __publicField(this, "params");
-    __publicField(this, "config");
+  constructor(params) {
     this.params = params;
-    this.config = config;
   }
   process() {
-    return;
+    return Object.entries(this.params).map(([key, value]) => `${key}=${value}`).join("&");
   }
 }
-function serialize(params, config) {
-  const serializer = new Serialize(params, config);
+function serialize(params) {
+  const serializer = new Serialize(params);
   return serializer.process();
 }
 class Unserialize {
-  constructor(string, config) {
-    __publicField(this, "string");
-    __publicField(this, "config");
+  constructor(string = "") {
     this.string = string;
-    this.config = config;
   }
   process() {
-    var _a;
-    const parts = (_a = this.string) == null ? void 0 : _a.split("&");
+    const string = this.string.substring(this.string.indexOf("?") + 1);
+    const parts = string.split("&");
     const params = {};
-    for (const part in parts) {
+    for (const part of parts) {
       const [key, value] = part.split("=");
       params[key] = value;
     }
-    return JSON.stringify(params);
+    return params;
   }
 }
-function unserialize(string, config) {
-  const unserialize2 = new Unserialize(string, config);
+function unserialize(string) {
+  const unserialize2 = new Unserialize(string);
   return unserialize2.process();
 }
 export { serialize as Serialize, unserialize as Unserialize };

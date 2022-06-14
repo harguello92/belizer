@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
-import path from "path";
+const { pathname: root } = new URL("src/main.ts", import.meta.url);
 
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/main.ts"),
+      entry: root,
       name: "Belizer",
+      formats: ["es", "cjs"],
     },
   },
 });

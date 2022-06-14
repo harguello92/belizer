@@ -3,19 +3,17 @@ import UnserializeInterface from "../interfaces/Unserialize";
 
 class Unserialize implements UnserializeInterface, BealizerInterface {
   string;
-  config;
 
-  constructor(string: string | null = "", config?: { [key: string]: string }) {
+  constructor(string: string | null = "") {
     this.string = string;
-    this.config = config;
   }
 
   process() {
-    const string = this.string.substring(this.string.indexOf("?"));
-    const parts = this.string.split("&");
+    const string = this.string.substring(this.string.indexOf("?") + 1);
+    const parts = string.split("&");
     const params = {} as { [key: string]: string };
 
-    for (const part in parts) {
+    for (const part of parts) {
       const [key, value] = part.split("=");
       params[key] = value;
     }
@@ -24,7 +22,7 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
   }
 }
 
-export default function (string: string, config?: { [key: string]: string }) {
-  const unserialize = new Unserialize(string, config);
+export default function (string: string) {
+  const unserialize = new Unserialize(string);
   return unserialize.process();
 }

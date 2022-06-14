@@ -1,18 +1,23 @@
 {
   "name": "belizer",
-  "version": "1.1.0",
+  "author": "harguello (https://github.com/harguello92)",
+  "homepage": "https://github.com/harguello92/belizer",
+  "repository": "harguello92/belizer",
+  "version": "1.2.0",
+  "type": "module",
+  "main": "./dist/belizer.cjs.js",
+  "module": "./dist/belizer.es.js",
+  "license": "MIT",
   "files": [
-    "/dist/belizer.es.js",
-    "/dist/belizer.umd.js"
+    "/dist"
   ],
   "exports": {
     ".": {
       "import": "./dist/belizer.es.js",
-      "require": "./dist/belizer.umd.js"
+      "require": "./dist/belizer.cjs.js"
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
     "build.test": "jest && tsc && vite build",
     "preview": "vite preview",
