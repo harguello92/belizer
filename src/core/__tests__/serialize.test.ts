@@ -1,9 +1,9 @@
 import { Serialize } from "../../main";
 
 const testParams = {
-  test1: "test1",
-  test2: "test2",
-  test3: "test3",
+  test1: "test 1",
+  test2: "test 2",
+  test3: "test 3",
 };
 
 describe("Serialize function", () => {
@@ -14,6 +14,6 @@ describe("Serialize function", () => {
 
   it("must be well constructed", () => {
     const serialized = Serialize(testParams);
-    expect(serialized).toEqual("test1=test1&test2=test2&test3=test3");
+    expect(serialized).toEqual("test1=test%201&test2=test%202&test3=test%203");
   });
 });

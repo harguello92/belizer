@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "vite build",
-    "build.test": "jest && tsc && vite build",
+    "build.test": "jest --verbose && tsc && vite build",
     "preview": "vite preview",
     "test": "jest"
   },

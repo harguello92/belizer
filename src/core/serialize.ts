@@ -1,20 +1,20 @@
 import BealizerInterface from "../interfaces/Bealizer";
 import SerializeInterface from "../interfaces/Serialize";
 class Serialize implements SerializeInterface, BealizerInterface {
-  params;
+  object;
 
-  constructor(params: { [key: number | string]: string }) {
-    this.params = params;
+  constructor(object: { [key: number | string]: string }) {
+    this.object = object;
   }
 
   process() {
-    return Object.entries(this.params)
-      .map(([key, value]) => `${key}=${value}`)
+    return Object.entries(this.object)
+      .map(([key, value]) => `${key}=${encodeURI(value as string)}`)
       .join("&");
   }
 }
 
-export default function (params: { [key: number | string]: string }) {
-  const serializer = new Serialize(params);
+export default function (object: { [key: number | string]: string }) {
+  const serializer = new Serialize(object);
   return serializer.process();
 }

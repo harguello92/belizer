@@ -1,13 +1,13 @@
 class Serialize {
-  constructor(params) {
-    this.params = params;
+  constructor(object) {
+    this.object = object;
   }
   process() {
-    return Object.entries(this.params).map(([key, value]) => `${key}=${value}`).join("&");
+    return Object.entries(this.object).map(([key, value]) => `${key}=${encodeURI(value)}`).join("&");
   }
 }
-function serialize(params) {
-  const serializer = new Serialize(params);
+function serialize(object) {
+  const serializer = new Serialize(object);
   return serializer.process();
 }
 class Unserialize {
@@ -20,7 +20,7 @@ class Unserialize {
     const params = {};
     for (const part of parts) {
       const [key, value] = part.split("=");
-      params[key] = value;
+      params[key] = decodeURI(value);
     }
     return params;
   }

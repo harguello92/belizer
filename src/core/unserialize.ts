@@ -15,7 +15,7 @@ class Unserialize implements UnserializeInterface, BealizerInterface {
 
     for (const part of parts) {
       const [key, value] = part.split("=");
-      params[key] = value;
+      params[key] = decodeURI(value);
     }
 
     return params;
