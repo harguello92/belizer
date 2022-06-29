@@ -3,7 +3,7 @@
   "author": "harguello (https://github.com/harguello92)",
   "homepage": "https://github.com/harguello92/belizer",
   "repository": "harguello92/belizer",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "type": "module",
   "main": "./dist/belizer.cjs.js",
   "module": "./dist/belizer.es.js",
