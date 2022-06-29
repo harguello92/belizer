@@ -80,6 +80,4 @@ console.log(unserializeResult)
 
 </br>
 
-``
-
 > **NOTE TO CONTRIBUTORS**: Feel free to propose improvements or new features!
