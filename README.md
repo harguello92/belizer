@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="150" height="150" src="assets/images/github/logo.svg">
+  <img height="30" src="assets/images/github/logo.svg">
 </p>
 
 <p align="center"><strong>Belizer</strong> is a useful, simple and lightweight toolset to serialize and unserialize </br> created with <strong>Typescript</strong> to use in <strong>Javascript</strong> environments such as Node, browsers...</p>
@@ -9,7 +9,6 @@
 
 - [Installation](#installation)
 - [Usage example](#usage-example)
-- [Params](#params)
 - [Bundle size](#bundles-size)
 - [Contributors](#contributors)
 
@@ -59,10 +58,10 @@ const serializeResult = Serialize({
   lastKey: "Last but not least key"
 });
 
-const unserializeResult = Unserialize('key1=Test%1&key2=Test%2&lastKey="Last%but%not%least%key');
+const unserializeResult = Unserialize('key1=Test%201&key2=Test%202&lastKey="Last%20but%20not%20least%20key');
 
 console.log(serializeResult)
-// key1=Test%1&key2=Test%2&lastKey="Last%but%not%least%key"
+// key1=Test%201&key2=Test%202&lastKey="Last%20but%20not%20least%20key"
 
 console.log(unserializeResult)
 // {key1: "Test 1", key2: "Test 2", lastKey: "Last but not least key"}
@@ -81,10 +80,6 @@ console.log(unserializeResult)
 
 </br>
 
-## Contributors
+``
 
-If you want be a contributor.
-
-```
-
-```
+> **NOTE TO CONTRIBUTORS**: Feel free to propose improvements or new features!
